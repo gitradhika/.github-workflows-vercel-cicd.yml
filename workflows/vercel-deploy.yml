@@ -21,8 +21,8 @@ jobs:
       
     - name: Deploy to Vercel
       run: |
-        vercel pull --yes --environment=production --gitnewtoken=$VERCEL_TOKEN
-        vercel build --prod --gitnewtoken=$VERCEL_TOKEN
+        vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+        vercel build --prod --token=$VERCEL_TOKEN
         vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
       env:
         VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
